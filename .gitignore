@@ -10,4 +10,7 @@
 .idea/
 *.txt
 */
-
+*.0
+*.replit
+*.nix
+*.breakpoints
