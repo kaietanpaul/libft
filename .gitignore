@@ -1,0 +1,13 @@
+# Temporary .c file
+*.swp
+*.swo
+*.swn
+*.swm
+
+# Compiled program
+*.out
+
+.idea/
+*.txt
+*/
+
