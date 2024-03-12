@@ -13,7 +13,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
         {
             if (haystack[index_hay] == needle[index_need])
             {
-                if ((ft_strlen(needle) - 1) == index_need)
+                if ((ft_strlen(needle) - 1) == (int)index_need)
                     return ((char *)haystack + index_hay - index_need);
                 index_hay ++;
                 index_need ++;
