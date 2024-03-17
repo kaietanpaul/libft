@@ -22,6 +22,7 @@ void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_isprint(char check);
 int		ft_isdigit(char check);
 int		ft_isascii(char check);
@@ -30,5 +31,6 @@ int		ft_isalnum(int check);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strlen(const char *str);
+
 
 #endif
