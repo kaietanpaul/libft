@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
 
 static char	get_sign(int n)
 {

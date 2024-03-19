@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
 
 static void make_set(char const *set, int charSet[256])
 {
