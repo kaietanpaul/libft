@@ -1,39 +1,56 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 18:35:43 by kpaul             #+#    #+#             */
+/*   Updated: 2024/03/19 18:35:47 by kpaul            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void make_set(char const *set, int char_set[256])
+static void	make_set(char const *set, int char_set[256])
 {
-	size_t	set_i = 0;
-	
+	size_t			set_i;
+	unsigned char	ch;
+
+	set_i = 0;
 	while (set[set_i])
 	{
-		unsigned char ch = set[set_i];
+		ch = set[set_i];
 		char_set[ch] = 1;
 		set_i++;
 	}
 }
-static int start_trim(char const *s1, size_t j, size_t k, int char_set[256])
+
+static int	start_trim(char const *s1, size_t j, size_t k, int char_set[256])
 {
 	while (j <= k)
 	{
 		if (char_set[(unsigned char)s1[j]] == 1)
 			j++;
 		else
-			break;
+			break ;
 	}
 	return (j);
 }
-static int end_trim(char const *s1, size_t j, size_t k, int char_set[256])
+
+static int	end_trim(char const *s1, size_t j, size_t k, int char_set[256])
 {
 	while (j <= k)
 	{
 		if (char_set[(unsigned char)s1[k]] == 1)
 			k--;
 		else
-			break;
+			break ;
 	}
 	return (k);
 }
-static char *populate(char *ptr, char const *s1, size_t j, size_t k)
+
+static char	*populate(char *ptr, char const *s1, size_t j, size_t k)
 {
 	size_t	l;
 
@@ -56,10 +73,10 @@ static char *populate(char *ptr, char const *s1, size_t j, size_t k)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	j;
-	size_t	k;
-	char	*ptr;
-	int	char_set[256];
+	size_t		j;
+	size_t		k;
+	char		*ptr;
+	int			char_set[256];
 
 	j = 0;
 	k = ft_strlen(s1) - 1;

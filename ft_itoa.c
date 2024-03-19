@@ -6,7 +6,7 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:51:25 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/19 17:51:43 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/19 18:37:59 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ static void	fill_string(char *string, long n_long, int start)
 char	*ft_itoa(int n)
 {
 	char	*string;
-	char		sign;
+	char	sign;
 	int		size;
-	long		n_long;
+	long	n_long;
 
 	n_long = n;
 	sign = get_sign(n);
