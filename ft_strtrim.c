@@ -79,6 +79,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int			char_set[256];
 
 	j = 0;
+	ptr = NULL;
 	k = ft_strlen(s1) - 1;
 	if (!set || !s1)
 		return (NULL);
