@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 17:55:07 by kpaul             #+#    #+#             */
+/*   Updated: 2024/03/19 17:55:09 by kpaul            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	count_words(char const *s, char c)
 {
-	int counter;
-	int inside;
+	int	counter;
+	int	inside;
 
 	counter = 0;
 	inside = 0;
@@ -20,7 +32,7 @@ static int	count_words(char const *s, char c)
 		}
 		s++;
 	}
-	return counter;
+	return (counter);
 }
 
 static int	find_next_substr(const char *s, char c, size_t *start, size_t *end)
@@ -28,12 +40,13 @@ static int	find_next_substr(const char *s, char c, size_t *start, size_t *end)
 	while (s[*start] && s[*start] == c)
 		(*start)++;
 	if (!s[*start])
-		return 0;
+		return (0);
 	*end = *start;
 	while (s[*end] && s[*end] != c)
 		(*end)++;
-	return 1;
+	return (1);
 }
+
 static int	fill_substrings(char **array, char const *s, char c, int word_count)
 {
 	size_t	start;
@@ -46,7 +59,7 @@ static int	fill_substrings(char **array, char const *s, char c, int word_count)
 	while (i < word_count)
 	{
 		if (!find_next_substr(s, c, &start, &end))
-			break;
+			break ;
 		array[i] = ft_substr(s, start, end - start);
 		if (!array[i])
 		{
@@ -66,19 +79,18 @@ char	**ft_split(char const *s, char c)
 	char	**array;
 	int		word_count;
 
-	if (!s) return (NULL);
-
+	if (!s)
+		return (NULL);
 	word_count = count_words(s, c);
 	array = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
-
 	if (!fill_substrings(array, s, c, word_count))
 	{
 		free(array);
 		return (NULL);
 	}
-	return array;
+	return (array);
 }
 /*int main(void)
 {

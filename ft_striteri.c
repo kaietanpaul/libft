@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 17:47:35 by kpaul             #+#    #+#             */
+/*   Updated: 2024/03/19 17:47:44 by kpaul            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
@@ -17,7 +29,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 /*#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-static void uppercase_char(unsigned int index __attribute__((unused)), char *ch) {
+static void uppercase_char(unsigned int index __attribute__((unused)), 
+char *ch) {
 	if (ch != NULL) {
 		*ch = toupper(*ch);
 	}

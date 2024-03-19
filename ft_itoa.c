@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/19 17:51:25 by kpaul             #+#    #+#             */
+/*   Updated: 2024/03/19 17:51:43 by kpaul            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static char	get_sign(int n)
@@ -13,7 +25,7 @@ static char	get_sign(int n)
 static int	get_size(int n, char sign)
 {
 	int	i;
-	
+
 	sign = get_sign(n);
 	i = 0;
 	if (n == 0)
@@ -40,10 +52,10 @@ static void	fill_string(char *string, long n_long, int start)
 
 char	*ft_itoa(int n)
 {
-	char *string;
-	char sign;
-	int size;
-	long n_long;
+	char	*string;
+	char		sign;
+	int		size;
+	long		n_long;
 
 	n_long = n;
 	sign = get_sign(n);

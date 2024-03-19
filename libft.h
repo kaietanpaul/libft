@@ -6,7 +6,7 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:35:50 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/06 15:21:29 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/19 17:45:39 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-
-
 
 void	*ft_memset(void *str, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
