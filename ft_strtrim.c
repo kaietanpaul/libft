@@ -1,40 +1,43 @@
 #include "libft.h"
 
-static void make_set(char const *set, int charSet[256])
+static void make_set(char const *set, int char_set[256])
 {
 	size_t	set_i = 0;
 	
 	while (set[set_i])
 	{
 		unsigned char ch = set[set_i];
-		charSet[ch] = 1;
+		char_set[ch] = 1;
 		set_i++;
 	}
 }
-static int start_trim(char const *s1, size_t j, size_t k, int charSet[256])
+static int start_trim(char const *s1, size_t j, size_t k, int char_set[256])
 {
 	while (j <= k)
 	{
-		if (charSet[(unsigned char)s1[j]] == 1)
+		if (char_set[(unsigned char)s1[j]] == 1)
 			j++;
 		else
 			break;
 	}
 	return (j);
 }
-static int end_trim(char const *s1, size_t j, size_t k, int charSet[256])
+static int end_trim(char const *s1, size_t j, size_t k, int char_set[256])
 {
 	while (j <= k)
 	{
-		if (charSet[(unsigned char)s1[k]] == 1)
+		if (char_set[(unsigned char)s1[k]] == 1)
 			k--;
 		else
 			break;
 	}
 	return (k);
 }
-static char *populate(char *ptr, char const *s1, size_t j, size_t k, size_t l)
+static char *populate(char *ptr, char const *s1, size_t j, size_t k)
 {
+	size_t	l;
+
+	l = 0;
 	ptr = malloc(k - j + 2);
 	if (ptr)
 	{
@@ -55,19 +58,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	j;
 	size_t	k;
-	size_t	l;
-	char *ptr;
-	int charSet[256];
+	char	*ptr;
+	int	char_set[256];
 
 	j = 0;
 	k = ft_strlen(s1) - 1;
-	l = 0;
 	if (!set || !s1)
 		return (NULL);
-	make_set(set, charSet);
-	j = start_trim(s1, j, k, charSet);
-	k = end_trim(s1, j, k, charSet);
-	ptr = populate(ptr, s1, j, k, l);
+	make_set(set, char_set);
+	j = start_trim(s1, j, k, char_set);
+	k = end_trim(s1, j, k, char_set);
+	ptr = populate(ptr, s1, j, k);
 	return (ptr);
 }
 // #include <stdio.h>
