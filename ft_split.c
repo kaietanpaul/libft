@@ -80,25 +80,25 @@ char	**ft_split(char const *s, char c)
 	}
 	return array;
 }
-/*#include <stdio.h>
-int main(void)
+/*int main(void)
 {
-	char const *s = "hello world this is a test";
-	char c = ' ';
+	char const *s = "a";
+	char c = 'a';
 	char **array = ft_split(s, c);
 
 	if (array == NULL)
 	{
-		printf("Memory allocation failed\n");
+		printf("Memory :(((( \n");
 		return 1;
 	}
+	if (array[0] == NULL)
+		printf("Yes there is NULL <3\n");
 
 	for (int i = 0; array[i] != NULL; i++)
 	{
-		printf("Substring %d: %s\n", i, array[i]);
+		printf("Array(%d): %s\n", i, array[i]);
 		free(array[i]);
 	}
 	free(array);
-
 	return 0;
 }*/
