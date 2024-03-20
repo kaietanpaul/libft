@@ -6,11 +6,11 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:52:28 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/08 11:29:35 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/19 20:33:40 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(char check)
 {
-	return (check > 31 && (unsigned char)check <= 127);
+	return (check >= 32 && (unsigned char)check <= 126);
 }

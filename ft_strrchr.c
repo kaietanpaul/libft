@@ -6,7 +6,7 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:21:52 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/07 12:22:31 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/19 21:43:51 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr( const char *str, int ch )
 	p = NULL;
 	while (str[i])
 	{
-		if (str[i] == ch)
+		if (str[i] == (char)ch)
 			p = (char *)&str[i];
 		i++;
 	}

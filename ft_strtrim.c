@@ -6,7 +6,7 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:35:43 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/19 18:35:47 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/20 18:54:02 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,14 @@ static int	end_trim(char const *s1, size_t j, size_t k, int char_set[256])
 static char	*populate(char *ptr, char const *s1, size_t j, size_t k)
 {
 	size_t	l;
+	size_t	make_size;
 
 	l = 0;
-	ptr = malloc(k - j + 2);
+	if (j <= k)
+		make_size = k - j + 2;
+	else
+		make_size = 1;
+	ptr = (char *)malloc(make_size);
 	if (ptr)
 	{
 		while (j <= k)
@@ -80,25 +85,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	j = 0;
 	ptr = NULL;
-	k = ft_strlen(s1) - 1;
-	if (!set || !s1)
+	k = 0;
+	if (!s1 || !set)
 		return (NULL);
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(""));
+	k = ft_strlen(s1) - 1;
+	ft_memset(char_set, 0, sizeof(char_set));
 	make_set(set, char_set);
 	j = start_trim(s1, j, k, char_set);
 	k = end_trim(s1, j, k, char_set);
-	ptr = populate(ptr, s1, j, k);
-	return (ptr);
+	if (j > k)
+	{
+		ptr = malloc(1);
+		if (ptr)
+			ptr[0] = '\0';
+		return (ptr);
+	}
+	return (populate(ptr, s1, j, k));
 }
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	const char *s1 = "gdoo dogHello Worldgogdgd";
-// 	const char *set = "dog";
-// 	char *new_s = ft_strtrim(s1, set);
-
-// 	printf("new sentence: %s", new_s);
-
-// 	free(new_s);
-
-// 	return (0);
-// }

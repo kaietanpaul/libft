@@ -1,14 +1,15 @@
 # Compiler
-CC = cc
+CC = clang
 # Compiler flags
 CFLAGS = -Wall -Wextra -Werror
 
 # Name of the output library
 NAME = libft.a
 
-# Automatically list all C source files in the current directory
-SRCS = $(wildcard *.c)
-# Object files
+# Explicitly list all C source files
+SRCS = ft_atoi.c ft_isalnum.c ft_isdigit.c ft_memchr.c ft_memmove.c ft_putendl_fd.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_toupper.c ft_bzero.c ft_isalpha.c ft_isprint.c ft_memcmp.c ft_memset.c ft_putnbr_fd.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_calloc.c ft_isascii.c ft_itoa.c ft_memcpy.c ft_putchar_fd.c ft_putstr_fd.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_tolower.c
+
+# Object files based on the source files
 OBJS = $(SRCS:.c=.o)
 
 # Default rule

@@ -6,7 +6,7 @@
 /*   By: kpaul <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 17:51:25 by kpaul             #+#    #+#             */
-/*   Updated: 2024/03/19 18:37:59 by kpaul            ###   ########.fr       */
+/*   Updated: 2024/03/20 17:54:54 by kpaul            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	get_size(int n, char sign)
 	return (i);
 }
 
-static void	fill_string(char *string, long n_long, int start)
+static void	populate(char *string, long n_long, int start)
 {
 	while (n_long != 0)
 	{
@@ -70,7 +70,7 @@ char	*ft_itoa(int n)
 	{
 		if (n_long < 0)
 			n_long = -n_long;
-		fill_string(string, n_long, size);
+		populate(string, n_long, size);
 		if (sign == '-')
 			string[0] = '-';
 	}
